@@ -5,32 +5,31 @@ import UserSelection from "./components/UserSelection";
 
 function App() {
   return (
-    <div className="container">
-      <header className="text-red-500">
-        <h1>Kütüphane Yönetim Sistemi</h1>
-      </header>
+    <div className="min-h-screen bg-slate-100 text-slate-800 py-8 px-4 ">
+      <div className="container mx-auto max-w-7xl">
+        <header className="mb-8 text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-indigo-700 italic">Kütüphane Yönetim Sistemi</h1>
+        </header>
 
-      <main>
-        <UserSelection />
-        <hr />
-        <div className="content-columns">
-          <section className="column">
-            <AddBookForm />
-          </section>
+        <main>
+          <UserSelection />
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+            <section className="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <AddBookForm />
+            </section>
 
-          <hr />
 
-          <section className="column">
-            <AvailableBooks />
-          </section>
+            <section className="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <AvailableBooks />
+            </section>
 
-          <hr />
 
-          <section className="column">
-            <BorrowedBooksDisplay />
-          </section>
-        </div>
-      </main>
+            <section className="p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              <BorrowedBooksDisplay />
+            </section>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
